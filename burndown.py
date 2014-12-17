@@ -26,11 +26,9 @@ def handle_burndown(bot, ievent):
     lines = 12 # number of lines used to print the chart -- TODO define in constant or set as an option ?
     for line in range(0, lines):
         # TODO spread slope according to height
-        if line % 2 == 0:
-            symbol = '\\'
-        else:
-            symbol = '_'
-        ievent.reply("%s|%s" % (line, symbol))
+        padding = ' ' * line
+        ievent.reply("|%s\\" % padding)
+    ievent.reply('|' + '_' * lines)
 
 # TODO time between each reply -- find a way to reduce that
 cmnds.add('burndown', handle_burndown, ['USER', 'WEB', 'CLOUD']) # TODO USER/WEB/CLOUD
