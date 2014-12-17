@@ -2,7 +2,7 @@
 #
 #
 
-__copyright__ = 'GPLv3 https://www.gnu.org/licenses/gpl-3.0.html'
+__copyright__ = 'GPLv3 https://www.gnu.org/licenses/gpl-3.0.html' # TODO
 
 # TODO clean up imports
 from gozerbot.generic import elapsedstring, getwho, jsonstring
@@ -23,10 +23,16 @@ plughelp.add('burndown', 'show a burndown chart of the current iteration') # TOD
 
 def handle_burndown(bot, ievent):
     """ burndown .. show burndown chart of the current iteration """ #TODO drop
-    height = 12 # number of lines used to print the chart -- TODO define in constant or set as an option ?
-    for y in range(1, height):
-        ievent.reply("|")
+    lines = 12 # number of lines used to print the chart -- TODO define in constant or set as an option ?
+    for line in range(0, lines):
+        # TODO spread slope according to height
+        if line % 2 == 0:
+            symbol = '\\'
+        else:
+            symbol = '_'
+        ievent.reply("%s|%s" % (line, symbol))
 
+# TODO time between each reply -- find a way to reduce that
 cmnds.add('burndown', handle_burndown, ['USER', 'WEB', 'CLOUD']) # TODO USER/WEB/CLOUD
 
 #TODO aliases.data['st'] = 'burndown'
