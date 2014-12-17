@@ -22,15 +22,13 @@ plughelp.add('burndown', 'show a burndown chart of the current iteration') # TOD
 # TODO register callback for private messages
 
 def handle_burndown(bot, ievent):
-    """ burndown .. show burndown chart of the current iteration """
-    try:
-        who = ievent.args[0] #TODO
-    except IndexError:
-        ievent.reply("who failed") #TODO
-        return
-    ievent.reply("heloworld") #TODO
+    """ burndown .. show burndown chart of the current iteration """ #TODO drop
+    height = 12 # number of lines used to print the chart -- TODO define in constant or set as an option ?
+    for y in range(1, height):
+        ievent.reply("|")
 
-cmnds.add('burndown', handle_burndown, ['USER', 'WEB', 'CLOUD'])
+cmnds.add('burndown', handle_burndown, ['USER', 'WEB', 'CLOUD']) # TODO USER/WEB/CLOUD
+
 #TODO aliases.data['st'] = 'burndown'
 #TODO tests.add('burndown').add('burndown exec')
 
