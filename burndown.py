@@ -32,14 +32,15 @@ def handle_burndown(bot, ievent):
         # TODO spread slope according to height
         padding_1 = ' ' * line                     # padding before '\'
         padding_2 = ' ' * (lines - len(padding_1)) # padding after  '\'
-        string = "|%s\\%s" % (padding_1, padding_2)
+        string = "  |%s\\%s" % (padding_1, padding_2)
         # Set cross 
         if int(sp*lines/max_sp) == line:
             string = list(string)
             string[int(day*lines/max_day)] = '+'
             string = "".join(string)
         ievent.reply(string)
-    ievent.reply('|' + '_' * lines)
+    ievent.reply('  |' + '_' * lines)
+    ievent.reply(" 0%s%s days" % (' ' * lines, max_day))
 
 # TODO time between each reply -- find a way to reduce that
 cmnds.add('burndown', handle_burndown, ['USER', 'WEB', 'CLOUD']) # TODO USER/WEB/CLOUD
