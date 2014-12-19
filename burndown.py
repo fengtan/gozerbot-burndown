@@ -1,6 +1,6 @@
 # plugs/burndown.py
 #
-#
+# TODO readme
 
 __copyright__ = 'GPLv3 https://www.gnu.org/licenses/gpl-3.0.html' # TODO
 
@@ -9,8 +9,6 @@ from gozerbot.examples import examples
 from gozerbot.plughelp import plughelp
 
 plughelp.add('burndown', 'show a burndown chart of the current iteration')
-
-# TODO register callback for private messages
 
 def handle_burndown(bot, ievent):
     """ burndown .. show burndown chart of the current iteration """
@@ -32,7 +30,6 @@ def handle_burndown(bot, ievent):
     ievent.reply('  |' + '_' * lines)
     ievent.reply(" 0%s%s days" % (' ' * lines, max_day))
 
-# TODO time between each reply -- find a way to reduce that
-cmnds.add('burndown', handle_burndown, ['USER', 'WEB', 'CLOUD']) # TODO USER/WEB/CLOUD
+cmnds.add('burndown', handle_burndown, ['USER', 'WEB', 'CLOUD'])
 
 examples.add('burndown', 'burndown .. show burndown chart of the current iteration', 'burndown')
