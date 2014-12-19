@@ -4,18 +4,9 @@
 
 __copyright__ = 'GPLv3 https://www.gnu.org/licenses/gpl-3.0.html' # TODO
 
-# TODO clean up imports
-from gozerbot.generic import elapsedstring, getwho, jsonstring
 from gozerbot.commands import cmnds
-from gozerbot.callbacks import callbacks, jcallbacks
 from gozerbot.examples import examples
-from gozerbot.datadir import datadir
-from gozerbot.persist.persist import PlugPersist
 from gozerbot.plughelp import plughelp
-from gozerbot.aliases import aliases
-from gozerbot.tests import tests
-
-import time, os
 
 plughelp.add('burndown', 'show a burndown chart of the current iteration')
 
