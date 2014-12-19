@@ -17,19 +17,18 @@ from gozerbot.tests import tests
 
 import time, os
 
-plughelp.add('burndown', 'show a burndown chart of the current iteration') # TODO or static data ?
+plughelp.add('burndown', 'show a burndown chart of the current iteration')
 
 # TODO register callback for private messages
 
 def handle_burndown(bot, ievent):
-    """ burndown .. show burndown chart of the current iteration """ #TODO drop
+    """ burndown .. show burndown chart of the current iteration """
     lines   = 12 # number of lines used to print the chart -- TODO define in constant or set as an option ?
     max_day = 15 # TODO dynamic
     day     = 10
     max_sp  = 60
     sp      = 20
     for line in range(0, lines):
-        # TODO spread slope according to height
         padding_1 = ' ' * line                     # padding before '\'
         padding_2 = ' ' * (lines - len(padding_1)) # padding after  '\'
         string = "  |%s\\%s" % (padding_1, padding_2)
@@ -45,8 +44,4 @@ def handle_burndown(bot, ievent):
 # TODO time between each reply -- find a way to reduce that
 cmnds.add('burndown', handle_burndown, ['USER', 'WEB', 'CLOUD']) # TODO USER/WEB/CLOUD
 
-#TODO aliases.data['st'] = 'burndown'
-#TODO tests.add('burndown').add('burndown exec')
-
-# TODO support options ? e.g. burndown i50
 examples.add('burndown', 'burndown .. show burndown chart of the current iteration', 'burndown')
