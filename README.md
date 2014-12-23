@@ -1,7 +1,9 @@
 ### Description
+
 [Gozerbot](https://launchpad.net/gozerbot) plugin to display [burndown charts](http://en.wikipedia.org/wiki/Burn_down_chart).
 
 Gozerbot is an IRC/Jabber bot.
+
 This plugin defines a command `!burndown` that displays charts like this (Story Points vs days):
 
     80|\
@@ -20,6 +22,7 @@ This plugin defines a command `!burndown` that displays charts like this (Story 
      0            20 days
 
 ### Installation
+
 Install Gozerbot e.g. for a quick setup on IRC:
 
     sudo apt-get install gozerbot (or download https://launchpad.net/gozerbot)
@@ -51,8 +54,18 @@ Invoke the command:
     !burndown
  
 ### Customization
-The plugin is based on hard-coded values.
-TODO
+
+By default the plugin is based on hard-coded values but it might be best to pull dynamic data e.g. by querying the database of a ticketing system like [Trac](http://trac.edgewall.org/).
+
+This can be achieved by implementing the associated functions:
+
+| Data                                           | Default (hard-coded) value | Function to implement |
+| ---------------------------------------------- |:--------------------------:| ---------------------:|
+| Total number of Story Points in the iteration  | 80                         | `get_spt_maximum()`   |
+| Remaining Story Points in the iteration        | 60                         | `get_spt_current()`   |
+| Total number of days in the iteration          | 20                         | `get_day_current()`   |
+| Remaining days before the end of the iteration | 10                         | `get_day_maximum()`   |
 
 ### Debugging
+
 `tail -f /var/log/gozerbot.log`
