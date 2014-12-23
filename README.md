@@ -2,9 +2,7 @@
 
 [Gozerbot](https://launchpad.net/gozerbot) plugin to display [burndown charts](http://en.wikipedia.org/wiki/Burn_down_chart).
 
-Gozerbot is an IRC/Jabber bot.
-
-This plugin defines a command `!burndown` that displays charts like this (Story Points vs days):
+Gozerbot is an IRC/Jabber bot. This plugin defines a command `!burndown` that displays the current situation of Story Points vs days in the iteration:
 
     80|\
     SP| \
@@ -60,7 +58,7 @@ By default the plugin is based on hard-coded values but it might be best to pull
 This can be achieved by implementing the associated functions:
 
 | Data                                           | Default (hard-coded) value | Function to implement |
-| ---------------------------------------------- |:--------------------------:| ---------------------:|
+| ---------------------------------------------- |:--------------------------:|:---------------------:|
 | Total number of Story Points in the iteration  | 80                         | `get_spt_maximum()`   |
 | Remaining Story Points in the iteration        | 60                         | `get_spt_current()`   |
 | Total number of days in the iteration          | 20                         | `get_day_current()`   |
