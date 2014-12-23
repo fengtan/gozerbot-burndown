@@ -63,9 +63,6 @@ def handle_burndown(bot, ievent):
         elif line == 1:
             string = replace_string(string, 'SP', 0)
         # Set cross on appropriate line.
-        ievent.reply(spt_maximum)
-        ievent.reply(spt_current)
-        ievent.reply(spt_maximum - spt_current)
         if int((spt_maximum - spt_current) * lines / spt_maximum) == line:
             cross = "+ (%s SP / %s days)" % (spt_current, day_current)
             string = replace_string(string, cross, int(day_current * lines / day_maximum) + margin)
