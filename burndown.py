@@ -1,8 +1,4 @@
 # plugs/burndown.py
-#
-# TODO readme
-# Update functions to make the chart dynamic, e.g. by querying your ticketing system.
-# TODO test edge cases (SP + days)
 
 __copyright__ = 'GPLv3 https://www.gnu.org/licenses/gpl-3.0.html'
 
@@ -21,11 +17,11 @@ def get_day_current():
 
 # Return total number of story points in the iteration.
 def get_spt_maximum():
-    return 80 #TODO test .5 (current + max)
+    return 80
 
 # Return number of story points left in the iteration [between 0 and get_spt_maximum()].
 def get_spt_current():
-    return 30
+    return 60
 
 # Replace characters located from 'start' in 'string' with 'replacement'.
 def replace_string(string, replacement, start):
