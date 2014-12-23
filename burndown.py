@@ -1,4 +1,8 @@
 # plugs/burndown.py
+#
+# Gozerbot plugin to display burndown charts
+#
+# https://github.com/Fengtan/gozerbot-burndown
 
 __copyright__ = 'GPLv3 https://www.gnu.org/licenses/gpl-3.0.html'
 
@@ -67,7 +71,6 @@ def handle_burndown(bot, ievent):
             string = replace_string(string, cross, int(day_current * lines / day_maximum) + margin)
         # Display line.
         ievent.reply(string)
-    # TODO see errors "can't add ..."
     # Set horizontal scale.
     ievent.reply(' ' * margin + '|' + '_' * lines)
     ievent.reply("%s0%s%s days" % (' ' * (margin - 1), ' ' * lines, day_maximum))
