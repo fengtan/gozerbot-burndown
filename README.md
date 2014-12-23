@@ -4,20 +4,21 @@
 
 Gozerbot is an IRC/Jabber bot. This plugin defines a command `!burndown` that displays the current situation of Story Points vs days in the iteration:
 
-    80|\
-    SP| \
-      |  \
-      |   \ + (60 SP / 10 days)
-      |    \
-      |     \
-      |      \
-      |       \
-      |        \
-      |         \
-      |          \
-      |           \
-      |____________
-     0            20 days
+    <owner>!burndown
+    <gzbot>80|\
+    <gzbot>SP| \
+    <gzbot>  |  \
+    <gzbot>  |   \ + (60 SP / 10 days)
+    <gzbot>  |    \
+    <gzbot>  |     \
+    <gzbot>  |      \
+    <gzbot>  |       \
+    <gzbot>  |        \
+    <gzbot>  |         \
+    <gzbot>  |          \
+    <gzbot>  |           \
+    <gzbot>  |____________
+    <gzbot> 0            20 days
 
 ### Installation
 
@@ -63,6 +64,8 @@ This can be achieved by implementing the associated functions:
 | Remaining Story Points in the iteration        | 60                         | `get_spt_current()`   |
 | Total number of days in the iteration          | 20                         | `get_day_current()`   |
 | Remaining days before the end of the iteration | 10                         | `get_day_maximum()`   |
+
+By default the chart is displayed on 12 lines but this may be adjusted by updating the `lines` variable.
 
 ### Debugging
 
